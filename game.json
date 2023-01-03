@@ -480,6 +480,21 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "layer": "Selector Layer",
+          "name": "Selector",
+          "persistentUuid": "65a15709-d522-4923-8837-4390eba789eb",
+          "width": 64,
+          "x": 0,
+          "y": -64,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -768,6 +783,47 @@
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "name": "Selector",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Block",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Assets\\Items\\Block.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -1552,7 +1608,44 @@
                       ]
                     }
                   ],
-                  "actions": []
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "=",
+                        "MouseX()-32",
+                        "=",
+                        "MouseY()-32"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SnapToGrid::SnapObjectToVirtualGrid"
+                      },
+                      "parameters": [
+                        "",
+                        "Selector",
+                        "64",
+                        "64",
+                        "0",
+                        "0",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSize"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "64",
+                        "64"
+                      ]
+                    }
+                  ]
                 }
               ],
               "parameters": []
@@ -1593,6 +1686,17 @@
               "width": 0
             }
           ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 14,
+          "ambientLightColorG": 6059824,
+          "ambientLightColorR": 8223160,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Selector Layer",
+          "visibility": true,
+          "cameras": [],
           "effects": []
         },
         {
