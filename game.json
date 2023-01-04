@@ -147,6 +147,15 @@
         "name": "AZAPRU-GAMES-LOGO.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "DefaultButton-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "DefaultButton-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -379,7 +388,7 @@
         "gridColor": 9416447,
         "gridAlpha": 0.2,
         "snap": true,
-        "zoomFactor": 0.5963714163013107,
+        "zoomFactor": 0.6227750346325633,
         "windowMask": false
       },
       "objectsGroups": [
@@ -388,6 +397,14 @@
           "objects": [
             {
               "name": "Block"
+            }
+          ]
+        },
+        {
+          "name": "Buttons",
+          "objects": [
+            {
+              "name": "TestButton"
             }
           ]
         }
@@ -428,6 +445,12 @@
           "name": "loadLevel",
           "type": "string",
           "value": ""
+        },
+        {
+          "folded": true,
+          "name": "editingMode",
+          "type": "string",
+          "value": "move"
         }
       ],
       "instances": [
@@ -492,6 +515,21 @@
           "x": 0,
           "y": -64,
           "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 64,
+          "layer": "Items Menu",
+          "name": "TestButton",
+          "persistentUuid": "fb62c9f2-27e5-40d0-b1ac-52ae6d15e366",
+          "width": 128,
+          "x": 64,
+          "y": 64,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -790,7 +828,14 @@
           "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "folded": true,
+              "name": "flashMode",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "animations": [
@@ -805,6 +850,65 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "Assets\\Items\\Block.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "TestButton",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "folded": true,
+              "name": "defScaleX",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "folded": true,
+              "name": "defScaleY",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "DefaultButton",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "DefaultButton-1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -861,13 +965,12 @@
             },
             {
               "type": {
-                "value": "JSONResourceLoader::LoadJSONToScene"
+                "value": "Opacity"
               },
               "parameters": [
-                "",
-                "1-1.json",
-                "loadLevel",
-                ""
+                "Selector",
+                "=",
+                "150"
               ]
             }
           ]
@@ -1267,6 +1370,18 @@
                     "value": "BuiltinCommonInstructions::Once"
                   },
                   "parameters": []
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "",
+                    "",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -1592,6 +1707,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Selector",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1646,9 +1762,329 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "flashMode",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "-",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "flashMode",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "+",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "<=",
+                        "50"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "flashMode",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "Selector",
+                        ">=",
+                        "150"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Selector",
+                        "flashMode",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
                 }
               ],
               "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Camera",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Always"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "DragCameraWithPointer::DragCameraWithPointer"
+                      },
+                      "parameters": [
+                        "",
+                        "0",
+                        "\"Grid Layer\"",
+                        "\"both\"",
+                        "Left",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DragCameraWithPointer::DragCameraWithPointer"
+                      },
+                      "parameters": [
+                        "",
+                        "0",
+                        "\"\"",
+                        "\"both\"",
+                        "Left",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DragCameraWithPointer::DragCameraWithPointer"
+                      },
+                      "parameters": [
+                        "",
+                        "0",
+                        "\"Selector Layer\"",
+                        "\"both\"",
+                        "Left",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Buttons",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1.05",
+                    "1.05",
+                    "\"elastic\"",
+                    "250",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1",
+                    "1",
+                    "\"easeOutCubic\"",
+                    "100",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "TestButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "0.95",
+                    "0.95",
+                    "\"easeOutCubic\"",
+                    "50",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []
@@ -1700,6 +2136,17 @@
           "effects": []
         },
         {
+          "ambientLightColorB": 7739192,
+          "ambientLightColorG": 6059824,
+          "ambientLightColorR": 8276672,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Items Menu",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
+        {
           "ambientLightColorB": 8152168,
           "ambientLightColorG": 6059824,
           "ambientLightColorR": 8222824,
@@ -1719,12 +2166,707 @@
         {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     }
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "D8H",
+      "category": "Input",
+      "extensionNamespace": "",
+      "fullName": "Cursor movement conditions",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTEsMjhMMTEsMjhjLTMuMywwLTYtMi43LTYtNnYtNGMwLTMuMywyLjctNiw2LTZoMGMzLjMsMCw2LDIuNyw2LDZ2NEMxNywyNS4zLDE0LjMsMjgsMTEsMjh6Ii8+DQo8bGluZSBjbGFzcz0ic3QwIiB4MT0iMTEiIHkxPSIxNSIgeDI9IjExIiB5Mj0iMTkiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yOSw5YzAsMi41LTIsNC41LTQuNSw0LjVTMjAsMTEuNSwyMCw5VjguNUMyMCw2LDE4LDQsMTUuNSw0UzExLDYsMTEsOC41Ii8+DQo8L3N2Zz4NCg==",
+      "name": "CursorMovement",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/Line Hero Pack/Master/SVG/Computers and Hardware/Computers and Hardware_mouse_pc.svg",
+      "shortDescription": "Conditions to check the cursor movement (still or moving).",
+      "version": "1.0.1",
+      "description": [
+        "Provides two conditions:",
+        "* The cursor is moving",
+        "* The cursor has stayed still for a given duration"
+      ],
+      "origin": {
+        "identifier": "CursorMovement",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "mouse",
+        "pointer",
+        "cursor"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Check if the cursor has stayed still for the specified time on the default layer.",
+          "fullName": "Cursor stays still",
+          "functionType": "Condition",
+          "name": "CursorStayStill",
+          "sentence": "Cursor has stayed still for _PARAM1_ seconds ",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "False"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"__mousemovement_MouseStayStill\"",
+                    "<",
+                    "GetArgumentAsNumber(\"Duration\")"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CursorMovement::CursorIsMoving"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"__mousemovement_MouseStayStill\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Duration (in seconds)",
+              "name": "Duration",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the cursor is moving on the default layer.",
+          "fullName": "Cursor is moving",
+          "functionType": "Condition",
+          "name": "CursorIsMoving",
+          "sentence": "Cursor is moving",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "__mousemovement.MousePreX",
+                    "=",
+                    "MouseX(\"\", 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "__mousemovement.MousePreY",
+                    "=",
+                    "MouseY(\"\", 0)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onScenePostEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "__mousemovement.MousePreX",
+                    "=",
+                    "MouseX(\"\", 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "__mousemovement.MousePreY",
+                    "=",
+                    "MouseY(\"\", 0)"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "@ddabrahim",
+      "category": "Camera",
+      "extensionNamespace": "",
+      "fullName": "Drag camera with the mouse (or touchscreen)",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWRyYWctdmFyaWFudCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0yMi42NywxMkwxOC4xOCwxNi41TDE1LjY3LDE0TDE3LjY1LDEyTDE1LjY3LDEwLjA0TDE4LjE4LDcuNTNMMjIuNjcsMTJNMTIsMS4zM0wxNi40Nyw1LjgyTDEzLjk2LDguMzNMMTIsNi4zNUwxMCw4LjMzTDcuNSw1LjgyTDEyLDEuMzNNMTIsMjIuNjdMNy41MywxOC4xOEwxMC4wNCwxNS42N0wxMiwxNy42NUwxNCwxNS42N0wxNi41LDE4LjE4TDEyLDIyLjY3TTEuMzMsMTJMNS44Miw3LjVMOC4zMywxMEw2LjM1LDEyTDguMzMsMTMuOTZMNS44MiwxNi40N0wxLjMzLDEyTTEyLDEwQTIsMiAwIDAsMSAxNCwxMkEyLDIgMCAwLDEgMTIsMTRBMiwyIDAgMCwxIDEwLDEyQTIsMiAwIDAsMSAxMiwxMFoiIC8+PC9zdmc+",
+      "name": "DragCameraWithPointer",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/drag-variant.svg",
+      "shortDescription": "Move a camera by dragging the mouse (or touchscreen).",
+      "version": "1.1.0",
+      "description": [
+        "Move a camera by dragging the mouse (or touchscreen). ",
+        "",
+        "How to use:",
+        "- Run this action on every frame that you want the camera to be movable by the mouse (or touchscreen)",
+        "- Select the mouse button to use (choose \"left\" for touchscreen)",
+        "- Select which directions the camera will move (vertical, horizontal, or both) ",
+        "- Select the layer that will be moved",
+        "",
+        "Tips:",
+        "- If no parameters are selected, the camera will move in both directions when the left mouse button (or touchscreen) are dragged."
+      ],
+      "origin": {
+        "identifier": "DragCameraWithPointer",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "pointer",
+        "drag",
+        "camera",
+        "scroll",
+        "gestures"
+      ],
+      "authorIds": [
+        "GfzRsieyUFVnsRR8OZThsPR29oq2",
+        "gqDaZjCfevOOxBYkK6zlhtZnXCg1"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Move a camera by dragging the mouse (or touchscreen).",
+          "fullName": "Drag camera with the mouse",
+          "functionType": "Action",
+          "name": "DragCameraWithPointer",
+          "sentence": "Drag camera on layer _PARAM2_ in _PARAM3_ directions using _PARAM4_ mouse button",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "When mouse button is pressed, get starting position of mouse",
+              "comment2": ""
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "GetArgumentAsString(\"InputButton\")"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::And"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "GetArgumentAsBoolean"
+                          },
+                          "parameters": [
+                            "\"InputButton\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "__DragCameraWithPointer.scrollStartX",
+                    "=",
+                    "MouseX(GetArgumentAsString(\"CamLayer\"),GetArgumentAsNumber(\"CamNumber\"))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "__DragCameraWithPointer.scrollStartY",
+                    "=",
+                    "MouseY(GetArgumentAsString(\"CamLayer\"),GetArgumentAsNumber(\"CamNumber\"))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "When mouse button is pressed, get current position of mouse and calculate distance between the previous and current position on X and Y axis",
+              "comment2": ""
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "GetArgumentAsString(\"InputButton\")"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::And"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "GetArgumentAsBoolean"
+                          },
+                          "parameters": [
+                            "\"InputButton\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "__DragCameraWithPointer.scrollTargetX",
+                        "=",
+                        "MouseX(GetArgumentAsString(\"CamLayer\"),GetArgumentAsNumber(\"CamNumber\"))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "__DragCameraWithPointer.scrollTargetY",
+                        "=",
+                        "MouseY(GetArgumentAsString(\"CamLayer\"),GetArgumentAsNumber(\"CamNumber\"))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "__DragCameraWithPointer.scrollDistanceX",
+                        "=",
+                        "(Variable(__DragCameraWithPointer.scrollTargetX) - Variable(__DragCameraWithPointer.scrollStartX))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "__DragCameraWithPointer.scrollDistanceY",
+                        "=",
+                        "(Variable(__DragCameraWithPointer.scrollTargetY) - Variable(__DragCameraWithPointer.scrollStartY))"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "If selected direction is horizontal, both, or left blank, move camera on X axis",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"horizontal\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"both\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Only move camera when the distance is more than one pixel",
+                      "comment2": ""
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Egal"
+                          },
+                          "parameters": [
+                            "abs(Variable(__DragCameraWithPointer.scrollDistanceX))",
+                            ">=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCameraX"
+                          },
+                          "parameters": [
+                            "",
+                            "-",
+                            "Variable(__DragCameraWithPointer.scrollDistanceX)",
+                            "GetArgumentAsString(\"CamLayer\")",
+                            "GetArgumentAsNumber(\"CamNumber\")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "If direction is vertical, both, or left blank, move camera on Y axis",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"vertical\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"both\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StrEqual"
+                          },
+                          "parameters": [
+                            "GetArgumentAsString(\"Direction\")",
+                            "=",
+                            "\"\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Only move camera when the distance is more than one pixel",
+                      "comment2": ""
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Egal"
+                          },
+                          "parameters": [
+                            "abs(Variable(__DragCameraWithPointer.scrollDistanceY))",
+                            ">=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCameraY"
+                          },
+                          "parameters": [
+                            "",
+                            "-",
+                            "Variable(__DragCameraWithPointer.scrollDistanceY)",
+                            "GetArgumentAsString(\"CamLayer\")",
+                            "GetArgumentAsNumber(\"CamNumber\")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Camera number (default: 0)",
+              "name": "CamNumber",
+              "type": "expression"
+            },
+            {
+              "description": "Camera layer (default: \"\")",
+              "name": "CamLayer",
+              "type": "layer"
+            },
+            {
+              "description": "Directions that the camera can move (horizontal, vertical, both)",
+              "name": "Direction",
+              "supplementaryInformation": "[\"vertical\",\"horizontal\",\"both\"]",
+              "type": "stringWithSelector"
+            },
+            {
+              "description": "Mouse button (use \"Left\" for touchscreen)",
+              "name": "InputButton",
+              "type": "mouse"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    },
     {
       "author": "",
       "category": "General",
