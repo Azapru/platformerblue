@@ -156,6 +156,33 @@
         "name": "DefaultButton-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Assets/move.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\move.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Assets/place.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\place.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Assets/delete.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\delete.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -381,8 +408,8 @@
       "uiSettings": {
         "grid": true,
         "gridType": "rectangular",
-        "gridWidth": 64,
-        "gridHeight": 64,
+        "gridWidth": 32,
+        "gridHeight": 32,
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridColor": 9416447,
@@ -405,6 +432,9 @@
           "objects": [
             {
               "name": "TestButton"
+            },
+            {
+              "name": "MoveButton"
             }
           ]
         }
@@ -522,14 +552,44 @@
         {
           "angle": 0,
           "customSize": false,
-          "height": 64,
-          "layer": "Items Menu",
-          "name": "TestButton",
-          "persistentUuid": "fb62c9f2-27e5-40d0-b1ac-52ae6d15e366",
-          "width": 128,
-          "x": 64,
+          "height": 0,
+          "layer": "GUI",
+          "name": "MoveButton",
+          "persistentUuid": "283362db-fd05-4ef0-8fff-76e3f9fc4645",
+          "width": 0,
+          "x": 992,
+          "y": 32,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "PlaceButton",
+          "persistentUuid": "58069069-eb09-4424-a5d0-17b8d66ff486",
+          "width": 0,
+          "x": 1088,
+          "y": 32,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "RemoveButton",
+          "persistentUuid": "ededc97f-3bc8-4c48-a67d-1179d71de42b",
+          "width": 0,
+          "x": 1216,
           "y": 64,
-          "zOrder": 5,
+          "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -928,6 +988,198 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "MoveButton",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 0,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 2,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior",
+              "useLegacyBottomAndRightAnchors": false
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Assets\\move.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "PlaceButton",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 0,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 2,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior",
+              "useLegacyBottomAndRightAnchors": false
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Assets\\place.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "RemoveButton",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 0,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 2,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior",
+              "useLegacyBottomAndRightAnchors": false
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Assets\\delete.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 32,
+                        "y": 32
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "NewTextInput",
+          "tags": "",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Touch to start typing",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
         }
       ],
       "events": [
@@ -944,15 +1196,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "value": "SetGameResolutionResizeMode"
-              },
-              "parameters": [
-                "",
-                "\"\""
-              ]
-            },
             {
               "type": {
                 "value": "ModVarScene"
@@ -1377,10 +1620,44 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "",
                     "",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarSceneTxt"
+                  },
+                  "parameters": [
+                    "editingMode",
+                    "=",
+                    "\"place\""
                   ]
                 }
               ],
@@ -1432,7 +1709,7 @@
                   },
                   "parameters": [
                     "",
-                    "Right"
+                    "Left"
                   ]
                 },
                 {
@@ -1444,6 +1721,16 @@
                     "",
                     "",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarSceneTxt"
+                  },
+                  "parameters": [
+                    "editingMode",
+                    "=",
+                    "\"remove\""
                   ]
                 }
               ],
@@ -1707,7 +1994,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Selector",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1874,6 +2160,193 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "MoveButton",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"move\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "PlaceButton",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"place\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "RemoveButton",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"remove\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"move\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Selector"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"place\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Selector",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"remove\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Selector"
+                      ]
+                    }
+                  ]
                 }
               ],
               "parameters": []
@@ -1896,6 +2369,16 @@
                       },
                       "parameters": [
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "editingMode",
+                        "=",
+                        "\"move\""
                       ]
                     }
                   ],
@@ -1952,7 +2435,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Buttons",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1965,7 +2447,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "",
                     "",
                     ""
@@ -1994,7 +2476,7 @@
                     "value": "Tween::AddObjectScaleTween"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "Tween",
                     "\"Tween\"",
                     "1.05",
@@ -2016,7 +2498,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "",
                     "",
                     ""
@@ -2035,7 +2517,7 @@
                     "value": "Tween::AddObjectScaleTween"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "Tween",
                     "\"Tween\"",
                     "1",
@@ -2051,6 +2533,17 @@
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "MoveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "MouseButtonPressed"
@@ -2073,7 +2566,7 @@
                     "value": "Tween::AddObjectScaleTween"
                   },
                   "parameters": [
-                    "TestButton",
+                    "MoveButton",
                     "Tween",
                     "\"Tween\"",
                     "0.95",
@@ -2085,6 +2578,291 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "0.95",
+                    "0.95",
+                    "\"easeOutCubic\"",
+                    "50",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1.05",
+                    "1.05",
+                    "\"elastic\"",
+                    "250",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "PlaceButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1",
+                    "1",
+                    "\"easeOutCubic\"",
+                    "100",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "0.95",
+                    "0.95",
+                    "\"easeOutCubic\"",
+                    "50",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1.05",
+                    "1.05",
+                    "\"elastic\"",
+                    "250",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "RemoveButton",
+                    "Tween",
+                    "\"Tween\"",
+                    "1",
+                    "1",
+                    "\"easeOutCubic\"",
+                    "100",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             }
           ],
           "parameters": []
@@ -2141,7 +2919,7 @@
           "ambientLightColorR": 8276672,
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "name": "Items Menu",
+          "name": "GUI",
           "visibility": true,
           "cameras": [],
           "effects": []
@@ -2159,6 +2937,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
         {
           "name": "Platform",
           "type": "PlatformBehavior::PlatformBehavior"
