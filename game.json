@@ -133,23 +133,6 @@
         "userAdded": true
       },
       {
-        "disablePreload": false,
-        "file": "1-1.json",
-        "kind": "json",
-        "metadata": "",
-        "name": "1-1.json",
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "AZAPRU-GAMES-LOGO.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "AZAPRU-GAMES-LOGO.png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
         "alwaysLoaded": false,
         "file": "DefaultButton-1.png",
         "kind": "image",
@@ -193,6 +176,15 @@
         "name": "startup.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "azapru.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "azapru.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -209,15 +201,15 @@
   ],
   "layouts": [
     {
-      "b": 255,
+      "b": 24,
       "disableInputWhenNotFocused": true,
       "mangledName": "Splash_32_45_32Azapru",
       "name": "Splash - Azapru",
-      "r": 255,
+      "r": 25,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 255,
+      "v": 15,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -233,11 +225,27 @@
       },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 156,
+          "layer": "",
+          "name": "NewSprite",
+          "persistentUuid": "60c96e36-d35f-4965-b174-db5613aba024",
+          "width": 693,
+          "x": 294,
+          "y": 288,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
       "objects": [
         {
           "assetStoreId": "",
-          "name": "logo",
+          "name": "NewSprite",
           "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -255,12 +263,12 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "AZAPRU-GAMES-LOGO.png",
+                      "image": "azapru.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 299.91879724022084,
-                        "y": 48.178895863182
+                        "x": 0,
+                        "y": 0
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -302,50 +310,11 @@
             },
             {
               "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "logo",
-                "SceneWindowWidth()/2",
-                "SceneWindowHeight()/2",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "ResetTimer"
               },
               "parameters": [
                 "",
                 "\"Timer\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Always"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "logo",
-                "=",
-                "SceneWindowWidth()/2",
-                "=",
-                "SceneWindowHeight()/2"
               ]
             }
           ]
