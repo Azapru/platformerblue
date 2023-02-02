@@ -11,9 +11,9 @@
     "folderProject": false,
     "orientation": "landscape",
     "packageName": "com.azapru.finalist",
-    "pixelsRounding": true,
+    "pixelsRounding": false,
     "projectUuid": "67cc7d66-0b27-4f62-9248-d83d90f8cc26",
-    "scaleMode": "nearest",
+    "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "useExternalSourceFiles": false,
@@ -185,6 +185,24 @@
         "name": "azapru.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "azapru_bar_up.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "azapru_bar_up.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "azapru_bar_down.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "azapru_bar_down.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -231,12 +249,57 @@
           "customSize": true,
           "height": 156,
           "layer": "",
-          "name": "NewSprite",
+          "name": "logo",
           "persistentUuid": "60c96e36-d35f-4965-b174-db5613aba024",
           "width": 693,
-          "x": 294,
-          "y": 288,
+          "x": 629,
+          "y": 366,
           "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 156,
+          "layer": "",
+          "name": "logo",
+          "persistentUuid": "78113367-9655-4f90-971f-62fdb0ed10af",
+          "width": 693,
+          "x": 629,
+          "y": 366,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 16,
+          "layer": "",
+          "name": "barUpper",
+          "persistentUuid": "9f2e3c46-1ac1-4002-96c2-bde2c2546a32",
+          "width": 1280,
+          "x": 0,
+          "y": 96,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 16,
+          "layer": "",
+          "name": "barBottom",
+          "persistentUuid": "b0143ad4-7c85-43bf-b5f8-546d23032c35",
+          "width": 1280,
+          "x": 0,
+          "y": 592,
+          "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -245,7 +308,53 @@
       "objects": [
         {
           "assetStoreId": "",
-          "name": "NewSprite",
+          "name": "logo",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "azapru.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 1131.6503519431826,
+                        "y": 255.50739133916716
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 1278.7583728398838,
+                        "y": 405.08946322067595
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "barUpper",
           "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -263,7 +372,48 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "azapru.png",
+                      "image": "azapru_bar_up.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "barBottom",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "azapru_bar_down.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -316,6 +466,135 @@
                 "",
                 "\"Timer\""
               ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "logo",
+                "=",
+                "SceneWindowWidth()/2",
+                "=",
+                "SceneWindowHeight()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeScale"
+              },
+              "parameters": [
+                "logo",
+                "=",
+                "0.60"
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "1.5",
+                "\"\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "logo",
+                "Tween",
+                "\"\"",
+                "0.30",
+                "0.30",
+                "\"easeOutCubic\"",
+                "500",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenCameraZoom"
+              },
+              "parameters": [
+                "",
+                "\"\"",
+                "1",
+                "\"\"",
+                "500",
+                "\"easeOutCubic\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "barUpper",
+                "=",
+                "SceneWindowWidth()"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "barBottom",
+                "=",
+                "SceneWindowWidth()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Always"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "logo",
+                "=",
+                "SceneWindowWidth()/2",
+                "=",
+                "SceneWindowHeight()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "barUpper",
+                "=",
+                "SceneWindowWidth()"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "barBottom",
+                "=",
+                "SceneWindowWidth()"
+              ]
             }
           ]
         },
@@ -330,7 +609,7 @@
                 "",
                 "\"Timer\"",
                 ">=",
-                "1.50"
+                "11.50"
               ]
             }
           ],
@@ -372,7 +651,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     },
     {
       "b": 0,
