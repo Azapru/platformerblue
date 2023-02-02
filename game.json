@@ -203,6 +203,13 @@
         "name": "azapru_bar_down.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "file": "Assets/DungGeunMo.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "Assets\\DungGeunMo.ttf",
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -678,7 +685,7 @@
         "gridColor": 9416447,
         "gridAlpha": 0.2,
         "snap": true,
-        "zoomFactor": 0.6227750346325633,
+        "zoomFactor": 0.7733980419227819,
         "windowMask": false
       },
       "objectsGroups": [
@@ -856,6 +863,21 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 62,
+          "layer": "",
+          "name": "NewBBText",
+          "persistentUuid": "b847f8b4-6e06-4902-95c2-4fb24ab1b31b",
+          "width": 288,
+          "x": 960,
+          "y": 128,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -876,13 +898,13 @@
           "effects": [],
           "behaviors": [
             {
+              "maxFallingSpeed": 70000,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 4000,
               "deceleration": 4000,
               "gravity": 2000,
               "jumpSpeed": 1000,
-              "maxFallingSpeed": 7000,
               "maxSpeed": 400,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -1412,6 +1434,25 @@
             "borderWidth": 1,
             "readOnly": false,
             "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Selection",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Selected: [color=white]MOVE[/color]",
+            "opacity": 255,
+            "fontSize": 30,
+            "visible": true,
+            "color": "255;255;255",
+            "fontFamily": "Assets\\DungGeunMo.ttf",
+            "align": "right",
+            "wordWrap": true
           }
         }
       ],
@@ -2527,6 +2568,16 @@
                       "parameters": [
                         "Selector"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "Selection",
+                        "=",
+                        "\"Selected: [color=white]MOVE[/color]\""
+                      ]
                     }
                   ]
                 },
@@ -2553,6 +2604,16 @@
                         "Selector",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "Selection",
+                        "=",
+                        "\"Selected: [color=green]PLACE[/color]\""
+                      ]
                     }
                   ]
                 },
@@ -2577,6 +2638,16 @@
                       },
                       "parameters": [
                         "Selector"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "Selection",
+                        "=",
+                        "\"Selected: [color=red]REMOVE[/color]\""
                       ]
                     }
                   ]
@@ -3508,6 +3579,16 @@
                     "MoveButton",
                     "=",
                     "SceneWindowWidth()-256"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "Selection",
+                    "=",
+                    "SceneWindowWidth()-256-16"
                   ]
                 }
               ]
