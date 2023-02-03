@@ -23,7 +23,7 @@
     "author": "AZAPRU",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "C:\\Users\\Caroline\\Documents\\GDevelop projects\\Platformerblue\\Build\\Desktop",
+    "latestCompilationDirectory": "C:\\Users\\Caroline\\Documents\\GDevelop projects\\Platformerblue\\Build\\Mobile",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -898,9 +898,9 @@
           "effects": [],
           "behaviors": [
             {
-              "maxFallingSpeed": 70000,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "maxFallingSpeed": 70000,
               "acceleration": 4000,
               "deceleration": 4000,
               "gravity": 2000,
@@ -1518,6 +1518,26 @@
               "parameters": [
                 "",
                 "\"\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PinchGesture::SetCameraPinchLayer"
+              },
+              "parameters": [
+                "",
+                "\"Selector Layer\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PinchGesture::SetCameraPinchLayer"
+              },
+              "parameters": [
+                "",
+                "\"Grid Layer\"",
                 ""
               ]
             },
