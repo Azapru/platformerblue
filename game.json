@@ -1593,7 +1593,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Input",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1763,7 +1762,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Animations",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2101,6 +2099,19 @@
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "please dont touch this, it should be remade, same to \"Load\"",
+                  "comment2": ""
+                },
+                {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2341,6 +2352,19 @@
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "This group is for editing modes, \"move, place and remove\"",
+                  "comment2": ""
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -2849,6 +2873,19 @@
                   ]
                 },
                 {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "who tf on gdev team was thinking that making numbers below ZERO should decrease camera zoom?? (instead of god damn NEGATIVE NUMBERS??)",
+                  "comment2": ""
+                },
+                {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2914,6 +2951,19 @@
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "yep, we need to do this for every button sadly, bcuz we cannot use \"groups\" for this idk why ",
+              "comment2": ""
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -3607,6 +3657,19 @@
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "remember to make GUI buttons and thingies anchored!!",
+              "comment2": ""
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
